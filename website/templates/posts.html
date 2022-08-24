@@ -1,8 +1,136 @@
-{% extends "posts_div.html" %} {% block title %}{{username}}'s Posts{% endblock
-%} {% block header %} {{username}}'s posts {% endblock %} {% block footer %}
+{% extends "posts_div.html" %} 
+<!-- {% block title %}{{username}}'s Posts{% endblock
+%}  -->
+{% block header %} 
+<!-- {{username}}'s posts  -->
+{% endblock %} 
+{% block footer %}
+
+
 <div align="center">
-  <a href="/home"
+  <!-- <a href="/home"
     ><button type="button" class="btn btn-primary btn-lg">Back</button></a
-  >
+  > -->
+
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item active" aria-current="page">自己紹介文</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">ThanhLB</h5>
+            <p class="text-muted mb-1">5学生</p>
+            <p class="text-muted mb-4">ハノイ工科大学</p>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+            <h5 class="my-3">コンテンツ</h5>
+            <p class="text-muted mb-1">家庭</p>
+            <p class="text-muted mb-4">学校</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">ユーザー名</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Le Binh Thanh</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">メール</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">thanh.lb175658@sis.hust.edu.vn</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">年齢</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">23</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">性別</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">男性</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">住んでいる国</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">ベトナム</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                <p class="mb-4"> このユーザが投稿した悩み
+                </p>
+                <p class="mb-1" style="font-size: .77rem;">人間関係の構築方法</p>
+                <!-- <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div> -->
+                <p class="mt-4 mb-1" style="font-size: .77rem;">日本語の会話を練習方法</p>
+                <!-- <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div> -->
+                <p class="mt-4 mb-1" style="font-size: .77rem;">自分のIT技術について紹介する</p>
+                <!-- <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div> -->
+                <p class="mt-4 mb-1" style="font-size: .77rem;">よく勉強したのになかなか上手に行かない</p>
+                <!-- <div class="progress rounded" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div> -->
+                <p class="mt-4 mb-1" style="font-size: .77rem;">会社にストレス事</p>
+                <!-- <div class="progress rounded mb-2" style="height: 5px;">
+                  <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </div>
 {% endblock %}
