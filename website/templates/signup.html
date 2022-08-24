@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
 content %}
 <form method="POST">
-  <h3 align="center">Sign Up</h3>
+  <h3 align="center">新規登録</h3>
   <div class="form-group">
-    <label for="email">Email Address</label>
+    <label for="email">メールアドレス</label>
     <input
       type="text"
       id="email"
@@ -11,7 +11,7 @@ content %}
       class="form-control"
       placeholder="Enter Email"
     />
-    <label for="username">Username</label>
+    <label for="username">表示するユーザー名</label>
     <input
       type="text"
       id="username"
@@ -19,7 +19,7 @@ content %}
       class="form-control"
       placeholder="Enter Username"
     />
-    <label for="password1">Password</label>
+    <label for="password1">パスワード</label>
     <input
       type="password"
       id="password1"
@@ -27,7 +27,7 @@ content %}
       class="form-control"
       placeholder="Enter Password"
     />
-    <label for="password2">Password Again</label>
+    <label for="password2">パスワードを再入力</label>
     <input
       type="password"
       id="password2"
@@ -35,9 +35,46 @@ content %}
       class="form-control"
       placeholder="Enter Password Again"
     />
+
+    <label for="age">年齢</label>
+    <input
+      type="text"
+      id="age"
+      name="age"
+      class="form-control"
+      placeholder="Enter Your Age"
+    />
+
+    <label for="gender">性別</label>
+    <input
+      type="text"
+      id="gender"
+      name="gender"
+      class="form-control"
+      placeholder="Male/Female"
+    />
+
+    <label for="work">職業</label>
+    <input
+      type="text"
+      id="work"
+      name="work"
+      class="form-control"
+      placeholder="Enter Your Work"
+    />
+
+    <label for="country">住んでいる国</label>
+    <input
+      type="text"
+      id="country"
+      name="country"
+      class="form-control"
+      placeholder="Enter Your Country"
+    />
+
     <br />
     <div align="center">
-      <button class="btn btn-primary" type="submit">Sign Up</button>
+      <button class="btn btn-primary" type="submit">登録</button>
     </div>
   </div>
 </form>

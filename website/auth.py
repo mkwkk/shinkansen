@@ -1,3 +1,4 @@
+import re
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from . import db
 from .models import User
@@ -34,6 +35,10 @@ def sign_up():
         username = request.form.get("username")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
+        age = request.form.get("age")
+        gender = request.form.get("gender")
+        work = request.form.get("work")
+        country = request.form.get("country")
 
         email_exists = User.query.filter_by(email=email).first()
         username_exists = User.query.filter_by(username=username).first()
@@ -46,13 +51,18 @@ def sign_up():
             flash('Password don\'t match!', category='error')
         elif len(username) < 2:
             flash('Username is too short.', category='error')
+        elif len(age) > 130:
+            flash('Your age is invalid.', category='error')
+        elif len(work) < 2:
+            flash('Your work is invalid.', category='error')
         elif len(password1) < 6:
             flash('Password is too short.', category='error')
         elif len(email) < 4:
             flash("Email is invalid.", category='error')
         else:
-            new_user = User(email=email, username=username, password=generate_password_hash(
-                password1, method='sha256'))
+            new_user = User(email=email, username=username, age=age,
+            gender=gender, work=work, country=country, password=generate_password_hash(
+            password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
