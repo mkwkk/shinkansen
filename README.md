@@ -1,7 +1,8 @@
-# Run Project
+## Run Project
+
 ```
-## pip install -r requirement.txt
+pip install -r requirement.txt
 ```
 ```
-## python app.py
+python app.py
 ```
