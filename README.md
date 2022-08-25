@@ -1,7 +1,7 @@
 ## Run Project
 
 ```
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 ```
 python app.py
