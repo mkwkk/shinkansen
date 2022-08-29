@@ -1,0 +1,28 @@
+{
+  "homepage": "Home",
+  "list_category": {
+    "title": "All categories",
+    "categories": [
+      {
+        "title": "Healthy",
+        "img": "healthy"
+      },
+      {
+        "title": "家族",
+        "img": "family"
+      },
+      {
+        "title": "仕事",
+        "img": "jobs"
+      },
+      {
+        "title": "コミュニティ",
+        "img": "community"
+      },
+      {
+        "title": "家",
+        "img": "house"
+      }
+    ]
+  }
+}

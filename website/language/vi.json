@@ -1,0 +1,28 @@
+{
+  "homepage": "Trang chủ",
+  "list_category": {
+    "title": "Các chủ đề",
+    "categories": [
+      {
+        "title": "健康",
+        "img": "healthy"
+      },
+      {
+        "title": "家族",
+        "img": "family"
+      },
+      {
+        "title": "仕事",
+        "img": "jobs"
+      },
+      {
+        "title": "コミュニティ",
+        "img": "community"
+      },
+      {
+        "title": "家",
+        "img": "house"
+      }
+    ]
+  }
+}

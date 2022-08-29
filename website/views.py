@@ -1,70 +1,126 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
+from unicodedata import category, name
+from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify, session
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
 from . import db
+from .langconfig import switch_language
 
-views = Blueprint("views", __name__)
+views = Blueprint("views", __name__, url_prefix='/')
+languages = switch_language()
+# global current_lang
 
 
-@views.route("/")
-@views.route("/home")
-@login_required
+# @views.route('/lang=<language>', methods=['GET'])
+# def set_language(language):
+#     session['language'] = language
+#     return render_template('home.html', user=current_user, **languages[language])
+
+@views.route("/home/")
+# @login_required
 def home():
+    if 'language' in request.args:
+        language = request.args.get('language')
+        if language is not None:
+            session['language'] = language
+    language = session.get('language')
     posts = Post.query.all()
-    return render_template("home.html", user=current_user, posts=posts)
+    return render_template("home.html", language=language, user=current_user, posts=posts, **languages[language])
+
+# profile
+@views.route("/profile/<username>/")
+def profile(username):
+    if 'language' in request.args:
+        language = request.args.get('language')
+        if language is not None:
+            session['language'] = language
+    language = session.get('language')
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        flash('No user with that username exists.', category='error')
+        return redirect(url_for("views.home"))
+    posts = user.posts
+    return render_template("profile.html", language=language, **languages[language], user=current_user, posts=posts, username=username, user_post=user)
+# end profile
 
 
-@views.route("/create-post", methods=['GET', 'POST'])
+# category
+@views.route("/home/<category>", methods=['GET'])
+def show_category(category):
+    if 'language' in request.args:
+        language = request.args.get('language')
+        if language is not None:
+            session['language'] = language
+    language = session.get('language')
+    posts = Post.query.filter_by(category=category).all()
+    return render_template("posts.html", language=language, **languages[language], user=current_user, category=category, posts=posts)
+
+# end category
+
+# post
+@views.route("/home/<category>/create-post/", methods=['GET', 'POST'])
 @login_required
-def create_post():
+def create_post(category):
+    if 'language' in request.args:
+        language = request.args.get('language')
+        if language is not None:
+            session['language'] = language
+    language = session.get('language')
     if request.method == "POST":
         text = request.form.get('text')
-
         if not text:
             flash('Post cannot be empty', category='error')
         else:
-            post = Post(text=text, author=current_user.id)
+            post = Post(text=text,category=category, author=current_user.id)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
-            return redirect(url_for('views.home'))
+        return redirect(url_for("views.show_category", category=category))
+    return render_template('create_post.html', category=category, language=language, user=current_user, **languages[language])
 
-    return render_template('create_post.html', user=current_user)
-
-
-@views.route("/delete-post/<id>")
+@views.route("/home/<category>/delete-post/<id>")
 @login_required
-def delete_post(id):
+def delete_post(category, id):
     post = Post.query.filter_by(id=id).first()
-
     if not post:
         flash("Post does not exist.", category='error')
-    elif current_user.id != post.id:
+    elif current_user.id != post.author:
         flash('You do not have permission to delete this post.', category='error')
     else:
         db.session.delete(post)
         db.session.commit()
         flash('Post deleted.', category='success')
 
-    return redirect(url_for('views.home'))
+    return redirect(url_for("views.show_category", category=category, id=id))
 
-
-@views.route("/posts/<username>")
+@views.route("/home/<category>/update-post/<post_id>", methods=['GET', 'POST'])
 @login_required
-def posts(username):
-    user = User.query.filter_by(username=username).first()
+def update_post(category, post_id):
+    if 'language' in request.args:
+        language = request.args.get('language')
+        if language is not None:
+            session['language'] = language
+    language = session.get('language')
+    post = Post.query.filter_by(id=post_id).first()
+    if request.method == "POST":
+        if not post:
+            flash("Post does not exist.", category='error')
+        elif current_user.id != post.author:
+            flash('You do not have permission to delete this post.', category='error')
+        else:
+            post.text = request.form['text']
+            db.session.merge(post)
+            db.session.commit()
+            flash('Post updated', category='success')
+        return redirect(url_for("views.show_category", category=category, id=post_id))
+    return render_template('update_post.html', category=category,  post=post, language=language, user=current_user, **languages[language])
 
-    if not user:
-        flash('No user with that username exists.', category='error')
-        return redirect(url_for('views.home'))
+# end post
 
-    posts = user.posts
-    return render_template("posts.html", user=current_user, posts=posts, username=username)
+# comment
 
-
-@views.route("/create-comment/<post_id>", methods=['POST'])
+@views.route("/home/<category>/create-comment/<post_id>", methods=['POST'])
 @login_required
-def create_comment(post_id):
+def create_comment(category, post_id):
     text = request.form.get('text')
 
     if not text:
@@ -79,12 +135,12 @@ def create_comment(post_id):
         else:
             flash('Post does not exist.', category='error')
 
-    return redirect(url_for('views.home'))
+    return redirect(url_for("views.show_category", category=category, id=post_id))
 
 
-@views.route("/delete-comment/<comment_id>")
+@views.route("/home/<category>/delete-comment/<comment_id>")
 @login_required
-def delete_comment(comment_id):
+def delete_comment(category, comment_id):
     comment = Comment.query.filter_by(id=comment_id).first()
 
     if not comment:
@@ -95,15 +151,41 @@ def delete_comment(comment_id):
         db.session.delete(comment)
         db.session.commit()
 
-    return redirect(url_for('views.home'))
+    return redirect(url_for("views.show_category", category=category, id=comment_id))
 
 
+# @views.route("/home/<category>/update-comment/<comment_id>", methods=['GET', 'POST'])
+# @login_required
+# def update_post(category, comment_id):
+#     if 'language' in request.args:
+#         language = request.args.get('language')
+#         if language is not None:
+#             session['language'] = language
+#     language = session.get('language')
+#     comment = Comment.query.filter_by(id=comment_id).first()
+#     if request.method == "POST":
+#         if not comment:
+#             flash("Comment does not exist.", category='error')
+#         elif current_user.id != comment.author:
+#             flash('You do not have permission to delete this post.', category='error')
+#         else:
+#             comment.text = request.form['text']
+#             db.session.merge(comment)
+#             db.session.commit()
+#             flash('Post updated', category='success')
+#         return redirect(url_for("views.show_category", category=category, id=post_id))
+#     return render_template('update_post.html', category=category,  post=post, language=language, user=current_user, **languages[language])
+
+# # end comment
+
+# like post
 @views.route("/like-post/<post_id>", methods=['POST'])
 @login_required
 def like(post_id):
     post = Post.query.filter_by(id=post_id).first()
     like = Like.query.filter_by(
         author=current_user.id, post_id=post_id).first()
+    print("hihi")
 
     if not post:
         return jsonify({'error': 'Post does not exist.'}, 400)
@@ -116,3 +198,4 @@ def like(post_id):
         db.session.commit()
 
     return jsonify({"likes": len(post.likes), "liked": current_user.id in map(lambda x: x.author, post.likes)})
+# end like
