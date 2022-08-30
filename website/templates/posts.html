@@ -3,16 +3,20 @@
 <div>
   {% block information_user %} {% endblock %}
 </div>
-{% block content %}
-<!-- {% block profile %}
-{% endblock %} -->
-<h1 class="text-center">{% block header %}{{category}}{% endblock %}</h1>
+<div>
+{% block search %}
 <div class="search-container">
   <form method="post">
     <input type="text" placeholder="Search.." name="searchTitle" class="form-control" value="{{searchTitle}}">
     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
   </form>
 </div>
+{% endblock %}
+</div>
+{% block content %}
+<!-- {% block profile %}
+{% endblock %} -->
+<h1 class="text-center">{% block header %}{{category}}{% endblock %}</h1>
 <div id="posts">
   {% for post in posts %}
   <div class="card border-dark">
