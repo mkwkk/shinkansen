@@ -44,14 +44,20 @@ def profile(username):
 
 
 # category
-@views.route("/home/<category>", methods=['GET'])
+@views.route("/home/<category>", methods=['GET', 'POST'])
 def show_category(category):
     if 'language' in request.args:
         language = request.args.get('language')
         if language is not None:
             session['language'] = language
     language = session.get('language')
-    posts = Post.query.filter_by(category=category).all()
+    if request.method == "POST":
+        searchTitle = request.form.get("searchTitle")
+        searchT = "%{}%".format(searchTitle)
+        posts = Post.query.filter_by(category=category).filter(Post.title.like(searchT)).all()
+        return render_template("posts.html", language=language, **languages[language], user=current_user, category=category, posts=posts, searchTitle=searchTitle)
+    else:
+        posts = Post.query.filter_by(category=category,).all()
     return render_template("posts.html", language=language, **languages[language], user=current_user, category=category, posts=posts)
 
 # end category
@@ -67,10 +73,11 @@ def create_post(category):
     language = session.get('language')
     if request.method == "POST":
         text = request.form.get('text')
+        title = request.form.get('title')
         if not text:
             flash('Post cannot be empty', category='error')
         else:
-            post = Post(text=text,category=category, author=current_user.id)
+            post = Post(text=text,category=category,title=title,author=current_user.id)
             db.session.add(post)
             db.session.commit()
             flash('Post created!', category='success')
@@ -108,6 +115,7 @@ def update_post(category, post_id):
             flash('You do not have permission to delete this post.', category='error')
         else:
             post.text = request.form['text']
+            post.title = request.form['title']
             db.session.merge(post)
             db.session.commit()
             flash('Post updated', category='success')

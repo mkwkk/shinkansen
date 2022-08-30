@@ -7,7 +7,12 @@
 <!-- {% block profile %}
 {% endblock %} -->
 <h1 class="text-center">{% block header %}{{category}}{% endblock %}</h1>
-
+<div class="search-container">
+  <form method="post">
+    <input type="text" placeholder="Search.." name="searchTitle" class="form-control" value="{{searchTitle}}">
+    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+  </form>
+</div>
 <div id="posts">
   {% for post in posts %}
   <div class="card border-dark">
@@ -59,6 +64,7 @@
       </div>
     </div>
     <div class="card-body">
+      <h3>{{post.title}}</h3>
       <div class="card-text">{{post.text}}</div>
       <br />
       <div class="collapse" id="comments-{{post.id}}">
