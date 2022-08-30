@@ -54,10 +54,10 @@
           <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
           <ul class="dropdown-menu">
             <li>
-              <a href="/home/{{category}}/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
+              <a href="/home/{{post.category}}/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
             </li>
             <li>
-              <a href="/home/{{category}}/update-post/{{post.id}}" class="dropdown-item">Update</a>
+              <a href="/home/{{post.category}}/update-post/{{post.id}}" class="dropdown-item">Update</a>
               <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Update
               </button> -->
@@ -87,7 +87,7 @@
                     data-bs-toggle="dropdown"></button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="/home/{{category}}/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a>
+                      <a href="/home/{{post.category}}/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a>
                     </li>
                   </ul>
                 </div>
@@ -107,7 +107,7 @@
         <small class="text-muted">No Comments</small>
         {% endif %}
       </p>
-      <form class="input-group mb-3" method="POST" action="/home/{{category}}/create-comment/{{post.id}}">
+      <form class="input-group mb-3" method="POST" action="/home/{{post.category}}/create-comment/{{post.id}}">
         <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!" />
         <button type="submit" class="btn btn-primary">コメント</button>
       </form>

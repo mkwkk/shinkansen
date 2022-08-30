@@ -39,7 +39,8 @@ def profile(username):
         flash('No user with that username exists.', category='error')
         return redirect(url_for("views.home"))
     posts = user.posts
-    return render_template("profile.html", language=language, **languages[language], user=current_user, posts=posts, username=username, user_post=user)
+    return render_template("profile.html", language=language, **languages[language], user=current_user, posts=posts, username=username, user_post=user, category="ALL POSTS")
+
 # end profile
 
 
