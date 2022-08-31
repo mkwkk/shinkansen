@@ -18,23 +18,32 @@
           </nav>
         </div>
       </div>
-
+      <div>
+       {% if user.username == user_post.username %}
+        <a href="/update-profile/{{current_user.username}}">Update</a>
+       {% endif %}
+      </div>
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
+              {% if user.avatar is none %}
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                class="rounded-circle img-fluid" style="width: 150px;">
-              <!-- <h5 class="my-3">{{user.username}}</h5> -->
-              <!-- <p class="text-muted mb-1">{{user.work}}</p>
-              <p class="text-muted mb-4">ハノイ工科大学</p> -->
+              class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+              {% else %}
+              <img src="{{user.avatar}}" alt="avatar"
+              class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+              {% endif %}
             </div>
           </div>
           <div class="card mb-4 mb-lg-0">
             <div class="card-body p-0">
-              <h5 class="my-3">コンテンツ</h5>
-              <!-- <p class="text-muted mb-1">家庭</p>
-              <p class="text-muted mb-4">学校</p> -->
+              {% if categories|length >0 %}
+                <h5 class="my-3">コンテンツ</h5>
+              {% endif %}
+              {% for item in categories %}
+              <p class="text-muted mb-4">{{item}}</p>
+              {% endfor %}
             </div>
           </div>
         </div>

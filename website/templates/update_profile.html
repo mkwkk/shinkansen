@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+<div>プロフィールの編集</div>
+<form method="post">
+  <div class="avatar-wrapper">
+    <input class="d-none" id="image" type="text" name="avatar">
+    <input class="file-upload d-none" type="file" accept="image/*"/>
+  </div>
+  <div>
+    <div class="card-body text-center">
+      {% if user.avatar is none %}
+      <img id="avatar" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+      class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+      {% else %}
+      <img id="avatar" src="{{user.avatar}}" alt="avatar"
+      class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+      {% endif %}
+      <!-- <img id="avatar" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+        class="rounded-circle img-fluid" style="cursor: pointer; width: 150px;"> -->
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="age">年齢</label>
+    <input
+      type="text"
+      id="update_age"
+      name="age"
+      class="form-control"
+      placeholder="Enter Your Age"
+      value="{{user.age}}"
+    />
+
+    <label for="gender">性別</label>
+    <input
+      type="text"
+      id="update_gender"
+      name="gender"
+      class="form-control"
+      placeholder="Male/Female"
+      value="{{user.gender}}"
+    />
+
+    <label for="work">職業</label>
+    <input
+      type="text"
+      id="update_work"
+      name="work"
+      class="form-control"
+      placeholder="Enter Your Work"
+      value="{{user.work}}"
+    />
+
+    <label for="country">住んでいる国</label>
+    <input
+      type="text"
+      id="update_country"
+      name="country"
+      class="form-control"
+      placeholder="Enter Your Country"
+      value="{{user.country}}"
+    />
+
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">更新</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

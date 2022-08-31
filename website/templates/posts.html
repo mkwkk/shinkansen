@@ -40,7 +40,9 @@
               </div>
               <div class="modal-body">
                 <textarea name="text" id="text-content" class="form-control">
-                  {{post.text}}
+                  {% autoescape false %}
+                    {{ post.text | safe }}
+                  {% endautoescape %}
                 </textarea>
               </div>
               <div class="modal-footer">
@@ -69,7 +71,11 @@
     </div>
     <div class="card-body">
       <h3>{{post.title}}</h3>
-      <div class="card-text">{{post.text}}</div>
+      <div class="card-text">
+        {% autoescape false %}
+        {{ post.text | safe }}
+        {% endautoescape %}
+      </div>
       <br />
       <div class="collapse" id="comments-{{post.id}}">
         <div class="card">
