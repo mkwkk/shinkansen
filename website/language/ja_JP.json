@@ -1,0 +1,63 @@
+{
+  "homepage": "ホームページ",
+  "list_category": {
+    "title": "コンテンツ",
+    "categories": [
+      {
+        "title": "健康",
+        "img": "healthy"
+      },
+      {
+        "title": "家族",
+        "img": "family"
+      },
+      {
+        "title": "仕事",
+        "img": "jobs"
+      },
+      {
+        "title": "コミュニティ",
+        "img": "community"
+      },
+      {
+        "title": "家",
+        "img": "house"
+      },
+      {
+        "title": "お金",
+        "img": "house"
+      },
+      {
+        "title": "人生",
+        "img": "house"
+      },
+      {
+        "title": "子ども",
+        "img": "house"
+      },
+      {
+        "title": "勉強",
+        "img": "house"
+      }  
+    ]
+  },
+  "submit" : "投稿",
+  "login" : "ログイン",
+  "sign_up" : "登録",
+  "japanese" : "日本語",  
+  "english" : "英語",  
+  "vietnamese" : "ベトナム語",
+
+  "profile" : "プロフィール",
+  "log_out" : "ログアウト",
+
+  "mail_address" : "メールアドレス",
+  "user_name" : "表示するユーザー名",
+  "password1" : "パスワード",  
+  "password2" : "パスワードを再入力",  
+  "age" : "年齢",
+  "sex" : "性別",  
+  "work" : "職業",  
+  "country" : "住んでいる国"
+
+}

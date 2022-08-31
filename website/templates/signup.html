@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<form method="POST">
+  <h3 align="center">新規登録</h3>
+  <div class="form-group">
+    <label for="email">{{mail_address}}</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      class="form-control"
+      placeholder="Enter Email"
+    />
+    <label for="username">{{user_name}}</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="form-control"
+      placeholder="Enter Username"
+    />
+    <label for="password1">{{password1}}</label>
+    <input
+      type="password"
+      id="password1"
+      name="password1"
+      class="form-control"
+      placeholder="Enter Password"
+    />
+    <label for="password2">{{password2}}</label>
+    <input
+      type="password"
+      id="password2"
+      name="password2"
+      class="form-control"
+      placeholder="Enter Password Again"
+    />
+
+    <label for="age">{{age}}</label>
+    <input
+      type="text"
+      id="age"
+      name="age"
+      class="form-control"
+      placeholder="Enter Your Age"
+    />
+
+    <label for="gender">{{sex}}</label>
+    <input
+      type="text"
+      id="gender"
+      name="gender"
+      class="form-control"
+      placeholder="Male/Female"
+    />
+
+    <label for="work">{{work}}</label>
+    <input
+      type="text"
+      id="work"
+      name="work"
+      class="form-control"
+      placeholder="Enter Your Work"
+    />
+
+    <label for="country">{{country}}</label>
+    <input
+      type="text"
+      id="country"
+      name="country"
+      class="form-control"
+      placeholder="Enter Your Country"
+    />
+
+    <br />
+    <div align="center">
+      <button class="btn btn-primary" type="submit">{{sign_up}}</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

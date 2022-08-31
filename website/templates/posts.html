@@ -1,0 +1,126 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+
+<div>
+  {% block information_user %} {% endblock %}
+</div>
+<div>
+{% block search %}
+<div class="search-container">
+  <form method="post">
+    <input type="text" placeholder="Search.." name="searchTitle" class="form-control" value="{{searchTitle}}">
+    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+{% endblock %}
+</div>
+{% block content %}
+<!-- {% block profile %}
+{% endblock %} -->
+<h1 class="text-center">{% block header %}{{category}}{% endblock %}</h1>
+<div id="posts">
+  {% for post in posts %}
+  <div class="card border-dark">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <a href="/profile/{{post.user.username}}">{{post.user.username}}</a>
+      <div>
+        <span id="likes-count-{{post.id}}">
+          {{ post.likes|length }}</span>
+        {% if user.id in post.likes|map(attribute="author")|list %}
+        <i class="fas fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})"></i>
+        {% else %}
+        <i class="far fa-thumbs-up" id="like-button-{{post.id}}" onclick="like({{post.id}})"></i>
+        {% endif %}
+        {% if user.id == post.author %}
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{category}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <textarea name="text" id="text-content" class="form-control">
+                  {{post.text}}
+                </textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/home/{{post.category}}/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
+            </li>
+            <li>
+              <a href="/home/{{post.category}}/update-post/{{post.id}}" class="dropdown-item">Update</a>
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Update
+              </button> -->
+            </li>
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>{{post.title}}</h3>
+      <div class="card-text">{{post.text}}</div>
+      <br />
+      <div class="collapse" id="comments-{{post.id}}">
+        <div class="card">
+          <div class="card-body" id="comments-expanded-{{post.id}}">
+            {% for comment in post.comments %}
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <a href="/profile/{{comment.user.username}}">{{comment.user.username}}</a>: {{comment.text}}
+              </div>
+              <div>
+                <small class="text-muted"> {{comment.date_created}}</small>
+                {% if user.id == comment.author or user.id == post.author %}
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
+                    data-bs-toggle="dropdown"></button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/home/{{post.category}}/delete-comment/{{comment.id}}" class="dropdown-item">Delete</a>
+                    </li>
+                  </ul>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <p class="card-text">
+        {% if post.comments|length > 0 %}
+        <a data-bs-toggle="collapse" href="#comments-{{post.id}}" role="button">
+          <small>View {{post.comments|length}} Comments</small>
+        </a>
+        {% else %}
+        <small class="text-muted">No Comments</small>
+        {% endif %}
+      </p>
+      <form class="input-group mb-3" method="POST" action="/home/{{post.category}}/create-comment/{{post.id}}">
+        <input type="text" id="text" name="text" class="form-control" placeholder="Comment something!" />
+        <button type="submit" class="btn btn-primary">コメント</button>
+      </form>
+    </div>
+    <div class="card-footer text-muted">{{post.date_created}}</div>
+  </div>
+  <br /> {% endfor %}
+</div>
+{% block footer %}
+<div>
+  <a href="/home/{{category}}/create-post"><button type="button" class="btn btn-primary btn-lg text-center">
+      {{submit}}
+    </button></a>
+</div>
+{% endblock %}
+{% endblock %}

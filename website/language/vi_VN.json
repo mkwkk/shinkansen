@@ -1,0 +1,62 @@
+{
+  "homepage": "Trang Chủ",
+  "list_category": {
+    "title": "Tất Các Chủ Đề",
+    "categories": [
+      {
+        "title": "SỨc khỏe",
+        "img": "healthy"
+      },
+      {
+        "title": "Gia Đình",
+        "img": "family"
+      },
+      {
+        "title": "Công Việc",
+        "img": "jobs"
+      },
+      {
+        "title": "Giao Tiếp",
+        "img": "community"
+      },
+      {
+        "title": "Nhà Cửa",
+        "img": "house"
+      },
+      {
+        "title": "Tiền Bạc",
+        "img": "house"
+      },
+      {
+        "title": "Cuộc Sống",
+        "img": "house"
+      },
+      {
+        "title": "Con Cái",
+        "img": "house"
+      },
+      {
+        "title": "Học Hành",
+        "img": "house"
+      }      
+    ]
+  },
+  "submit" : "Đăng Bài",
+  "login" : "Đăng Nhập",
+  "sign_up" : "Đăng Ký",
+  "japanese" : "Tiếng Nhật",  
+  "english" : "Tiếng Anh",  
+  "vietnamese" : "Tiếng Việt",
+
+  "profile" : "Trang Cá Nhân",
+  "log_out" : "Đăng Xuất",
+
+  "mail_address" : "Địa Chỉ Email",
+  "user_name" : "Tên Đăng Nhập",
+  "password1" : "Nhập Password",  
+  "password2" : "NHập Lại Password",  
+  "age" : "Tuổi",
+  "sex" : "Giới Tính",  
+  "work" : "Công Việc",  
+  "country" : "Quốc Gia"
+}

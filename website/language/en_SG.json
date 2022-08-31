@@ -1,0 +1,62 @@
+{
+  "homepage": "Home",
+  "list_category": {
+    "title": "All categories",
+    "categories": [
+      {
+        "title": "Healthy",
+        "img": "healthy"
+      },
+      {
+        "title": "Family",
+        "img": "family"
+      },
+      {
+        "title": "Jobs",
+        "img": "jobs"
+      },
+      {
+        "title": "Community",
+        "img": "community"
+      },
+      {
+        "title": "House",
+        "img": "house"
+      },
+      {
+        "title": "Money",
+        "img": "house"
+      },
+      {
+        "title": "Life",
+        "img": "house"
+      },
+      {
+        "title": "Children",
+        "img": "house"
+      },
+      {
+        "title": "Study",
+        "img": "house"
+      }      
+    ]
+  },
+  "submit" : "Post Category",
+  "login" : "Login",
+  "sign_up" : "Sign Up",
+  "japanese" : "Japanese",  
+  "english" : "English",  
+  "vietnamese" : "Vietnamese",
+
+  "profile" : "Profile",
+  "log_out" : "Logout",
+
+  "mail_address" : "Mail Address",
+  "user_name" : "User name",
+  "password1" : "Enter Password",  
+  "password2" : "Re-enter Password",  
+  "age" : "Age",
+  "sex" : "Gender",  
+  "work" : "Work",  
+  "country" : "Country"
+}
