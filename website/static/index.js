@@ -13,8 +13,6 @@ function like(postId) {
     })
     .catch((e) => alert("Could not like post."));
 }
-<<<<<<< HEAD
-=======
 
 $(document).ready(function() {
   var readURL = function(input) {
@@ -47,4 +45,3 @@ function processFileContent(data) {
      $(".file-upload").click();
   });
 });
->>>>>>> minhthu
