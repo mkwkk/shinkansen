@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div>プロフィールの編集</div>
+<div>{{edit_profile}}</div>
 <form method="post">
   <div class="avatar-wrapper">
     <input class="d-none" id="image" type="text" name="avatar">
@@ -8,7 +8,7 @@
   </div>
   <div>
     <div class="card-body text-center">
-      {% if user.avatar is none %}
+      {% if user.avatar is none or user.avatar == "" %}
       <img id="avatar" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
       class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
       {% else %}
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="age">年齢</label>
+    <label for="age">{{age}}</label>
     <input
       type="text"
       id="update_age"
@@ -30,7 +30,7 @@
       value="{{user.age}}"
     />
 
-    <label for="gender">性別</label>
+    <label for="gender">{{sex}}</label>
     <input
       type="text"
       id="update_gender"
@@ -40,7 +40,7 @@
       value="{{user.gender}}"
     />
 
-    <label for="work">職業</label>
+    <label for="work">{{work}}</label>
     <input
       type="text"
       id="update_work"
@@ -50,7 +50,7 @@
       value="{{user.work}}"
     />
 
-    <label for="country">住んでいる国</label>
+    <label for="country">{{country}}</label>
     <input
       type="text"
       id="update_country"
@@ -62,7 +62,7 @@
 
     <br />
     <div align="center">
-      <button type="submit" class="btn btn-primary">更新</button>
+      <button type="submit" class="btn btn-primary">{{update_profile}}</button>
     </div>
   </div>
 </form>

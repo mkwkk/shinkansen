@@ -13,21 +13,21 @@
         <div class="col">
           <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
             <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item active" aria-current="page">自己紹介文</li>
+              <li class="breadcrumb-item active" aria-current="page">{{self_introduction}}</li>
             </ol>
           </nav>
         </div>
       </div>
       <div>
        {% if user.username == user_post.username %}
-        <a href="/update-profile/{{current_user.username}}">Update</a>
+        <a href="/update-profile/{{current_user.username}}">{{update_profile}}</a>
        {% endif %}
       </div>
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              {% if user.avatar is none %}
+              {% if user.avatar is none or user.avatar == ""  %}
               <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
               class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
               {% else %}
@@ -52,7 +52,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">ユーザー名</p>
+                  <p class="mb-0">{{user_name}}</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{user_post.username}}</p>
@@ -61,7 +61,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">メール</p>
+                  <p class="mb-0">{{mail_address}}</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{user_post.email}}</p>
@@ -70,7 +70,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">年齢</p>
+                  <p class="mb-0">{{age}}</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{user_post.age}}</p>
@@ -79,7 +79,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">性別</p>
+                  <p class="mb-0">{{sex}}</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{user_post.gender}}</p>
@@ -88,7 +88,7 @@
               <hr>
               <div class="row">
                 <div class="col-sm-3">
-                  <p class="mb-0">住んでいる国</p>
+                  <p class="mb-0">{{country}}</p>
                 </div>
                 <div class="col-sm-9">
                   <p class="text-muted mb-0">{{user_post.country}}</p>

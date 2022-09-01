@@ -32,15 +32,15 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="/home">{{homepage}}</a>
             {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="/profile/{{user.username}}">Profile</a>
-            <a class="nav-item nav-link" href="/logout">Logout</a>
+            <a class="nav-item nav-link" href="/profile/{{user.username}}">{{profile}}</a>
+            <a class="nav-item nav-link" href="/logout">{{log_out}}</a>
             {% else %}
-            <a class="nav-item nav-link" href="/login">Login</a>
-            <a class="nav-item nav-link" href="/sign-up">Sign Up</a>
+            <a class="nav-item nav-link" href="/login">{{login}}</a>
+            <a class="nav-item nav-link" href="/sign-up">{{sign_up}}</a>
             {% endif %}
-            <a class="nav-item nav-link" href="{{ url_for('views.home', language='ja_JP') }}">Japanese</a>
-            <a class="nav-item nav-link" href="{{ url_for('views.home', language='en_SG') }}">English</a>
-            <a class="nav-item nav-link" href="{{ url_for('views.home', language='vi_VN') }}">Vietnamese</a>
+            <a class="nav-item nav-link" href="{{ url_for('views.home', language='ja_JP') }}">{{japanese}}</a>
+            <a class="nav-item nav-link" href="{{ url_for('views.home', language='en_SG') }}">{{english}}</a>
+            <a class="nav-item nav-link" href="{{ url_for('views.home', language='vi_VN') }}">{{vietnamese}}</a>
           </div>
         </div>
       </div>

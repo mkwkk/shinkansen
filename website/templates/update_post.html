@@ -3,11 +3,11 @@
 <form method=post class=add-post>
   <h1>{{category}}</div>
   <div class="form-group">
-    <label for="update-title" class="form-label">タイトル：</label>
+    <label for="update-title" class="form-label">{{title}}</label>
     <input type="text" class="form-control" id="update-title" placeholder="title" name="title" value="{{post.title}}">
-    <label for="InputText">Postの内容: </label>
+    <label for="InputText">{{post_content}} </label>
     <textarea class="form-control" id="InputText" name=text rows="3">{{ post.text | safe }}</textarea>
   </div>
-  <button type="submit" class="btn btn-primary">更新</button>
+  <button type="submit" class="btn btn-primary">{{update_profile}}</button>
 </form>
 {% endblock %}

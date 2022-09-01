@@ -1,28 +1,80 @@
 {
-  "homepage": "Trang chủ",
+  "homepage": "Trang Chủ",
   "list_category": {
-    "title": "Các chủ đề",
+    "title": "Tất Các Chủ Đề",
     "categories": [
       {
-        "title": "健康",
+        "title": "Sức khỏe",
         "img": "healthy"
       },
       {
-        "title": "家族",
+        "title": "Gia Đình",
         "img": "family"
       },
       {
-        "title": "仕事",
+        "title": "Công Việc",
         "img": "jobs"
       },
       {
-        "title": "コミュニティ",
+        "title": "Giao Tiếp",
         "img": "community"
       },
       {
-        "title": "家",
+        "title": "Nhà Cửa",
         "img": "house"
-      }
+      },
+      {
+        "title": "Tiền Bạc",
+        "img": "money"
+      },
+      {
+        "title": "Cuộc Sống",
+        "img": "life"
+      },
+      {
+        "title": "Con Cái",
+        "img": "child"
+      },
+      {
+        "title": "Học Hành",
+        "img": "study"
+      }      
     ]
-  }
+  },
+  "submit" : "Đăng Bài",
+  "login" : "Đăng Nhập",
+  "sign_up" : "Đăng Ký",
+  "japanese" : "Tiếng Nhật",  
+  "english" : "Tiếng Anh",  
+  "vietnamese" : "Tiếng Việt",
+
+  "profile" : "Trang Cá Nhân",
+  "log_out" : "Đăng Xuất",
+
+  "mail_address" : "Địa Chỉ Email",
+  "user_name" : "Tên Đăng Nhập",
+  "password1" : "Nhập Password",  
+  "password2" : "NHập Lại Password",  
+  "age" : "Tuổi",
+  "sex" : "Giới Tính",  
+  "work" : "Công Việc",  
+  "country" : "Quốc Gia",
+
+  "edit_profile" : "Chỉnh Sửa Profile",  
+  "update_profile" : "Thay Đổi",
+
+  "title" : "Tiêu Đề",  
+  "post_content" : "Đăng Bài",
+  "self_introduction" : "Giới Thiệu Bản Thân",
+
+  "close" : "Đóng",
+  "delete" : "Xóa",
+  "comments" : "Comments",
+  "no_comments" : "No Comments", 
+  "save_changes" : "Lưu thay đổi", 
+
+  "post" : "Đăng Bài",
+  "back" : "Quay Lại",
+
+  "content" : "Bài Viết"
 }

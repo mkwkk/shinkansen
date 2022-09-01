@@ -22,8 +22,60 @@
       {
         "title": "家",
         "img": "house"
-      }
+      },
+      {
+        "title": "お金",
+        "img": "money"
+      },
+      {
+        "title": "人生",
+        "img": "life"
+      },
+      {
+        "title": "子ども",
+        "img": "child"
+      },
+      {
+        "title": "勉強",
+        "img": "study"
+      }  
     ]
-  }
+  },
+  "submit" : "投稿",
+  "login" : "ログイン",
+  "sign_up" : "登録",
+  "japanese" : "日本語",  
+  "english" : "英語",  
+  "vietnamese" : "ベトナム語",
+
+  "profile" : "プロフィール",
+  "log_out" : "ログアウト",
+
+  "mail_address" : "メールアドレス",
+  "user_name" : "表示するユーザー名",
+  "password1" : "パスワード",  
+  "password2" : "パスワードを再入力",  
+  "age" : "年齢",
+  "sex" : "性別",  
+  "work" : "職業",  
+  "country" : "住んでいる国",
+
+  "edit_profile" : "Edit Profile",  
+  "update_profile" : "Update",
+
+  "title" : "タイトル",  
+  "post_content" : "投稿",
+  "self_introduction" : "自己紹介文",
+
+  "close" : "閉じる",
+  "delete" : "削除",
+  "comments" : "コメント",
+  "no_comments" : "コメントはありません", 
+  "save_changes" : "保存する", 
+
+  "post" : "投稿",
+  "back" : "戻る",
+
+  "content" : "コンテンツ"
 
 }

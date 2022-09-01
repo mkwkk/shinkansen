@@ -5,7 +5,7 @@ import json
 
 def switch_language():
      # set language
-    app_language = 'ja_JP'
+    app_language = 'vi_VN'
     locale.setlocale(locale.LC_ALL, app_language)
     languages = {}
     language_list = glob.glob("website/language/*.json")

@@ -8,21 +8,74 @@
         "img": "healthy"
       },
       {
-        "title": "家族",
+        "title": "Family",
         "img": "family"
       },
       {
-        "title": "仕事",
+        "title": "Jobs",
         "img": "jobs"
       },
       {
-        "title": "コミュニティ",
+        "title": "Community",
         "img": "community"
       },
       {
-        "title": "家",
+        "title": "House",
         "img": "house"
-      }
+      },
+      {
+        "title": "Money",
+        "img": "money"
+      },
+      {
+        "title": "Life",
+        "img": "life"
+      },
+      {
+        "title": "Children",
+        "img": "child"
+      },
+      {
+        "title": "Study",
+        "img": "study"
+      }      
     ]
-  }
+  },
+  "submit" : "Post Category",
+  "login" : "Login",
+  "sign_up" : "Sign Up",
+  "japanese" : "Japanese",  
+  "english" : "English",  
+  "vietnamese" : "Vietnamese",
+
+  "profile" : "Profile",
+  "log_out" : "Logout",
+
+  "mail_address" : "Mail Address",
+  "user_name" : "User name",
+  "password1" : "Enter Password",  
+  "password2" : "Re-enter Password",  
+  "age" : "Age",
+  "sex" : "Gender",  
+  "work" : "Work",  
+  "country" : "Country",
+
+  "edit_profile" : "Edit Profile",  
+  "update_profile" : "Update",
+
+  "title" : "Title",  
+  "post_content" : "Post Content",
+  "self_introduction" : "Self Introduction",
+
+  "close" : "Close",
+  "delete" : "Delete",
+  "comments" : "Comments",
+  "no_comments" : "No Comments", 
+  "save_changes" : "Save changes", 
+
+  "post" : "Post",
+  "back" : "Back",
+
+  "content" : "Content"
+
 }

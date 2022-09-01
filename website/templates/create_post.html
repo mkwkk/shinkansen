@@ -4,19 +4,19 @@
 <h1 align="center">{{category}}</h1>
 
 <form method="POST">
-  <label for="text-title" class="form-label">タイトル：</label>
+  <label for="text-title" class="form-label">{{title}}</label>
   <input type="text" class="form-control" id="text-title" placeholder="title" name="title">
-  <label>内容</label>
+  <label>{{content}}</label>
   <textarea name="text" id="text" class="form-control"></textarea>
   <br />
   <div align="center">
-    <button type="submit" class="btn btn-lg btn-primary">Post</button>
+    <button type="submit" class="btn btn-lg btn-primary">{{post}}</button>
   </div>
 </form>
 <br />
 <div align="center">
   <a href="/home"
-    ><button type="button" class="btn btn-lg btn-secondary">Back</button></a
+    ><button type="button" class="btn btn-lg btn-secondary">{{back}}</button></a
   >
 </div>
 {% endblock %}
