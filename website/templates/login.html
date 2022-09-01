@@ -2,9 +2,9 @@
 {% block title %}Login{% endblock %} 
 {% block content%}
 <form method="POST">
-  <h3 align="center">ログイン</h3>
+  <h3 align="center">{{login}}</h3>
   <div class="form-group">
-    <label for="email">メールアドレス</label>
+    <label for="email">{{mail_address}}</label>
     <input
       type="text"
       id="email"
@@ -12,7 +12,7 @@
       class="form-control"
       placeholder="Enter Email"
     />
-    <label for="password">パスワード</label>
+    <label for="password">{{password1}}</label>
     <input
       type="password"
       id="password"
@@ -22,7 +22,7 @@
     />
     <br />
     <div align="center">
-      <button class="btn btn-primary" type="submit">ログイン</button>
+      <button class="btn btn-primary" type="submit">{{login}}</button>
     </div>
   </div>
 </form>

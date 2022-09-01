@@ -1,9 +1,12 @@
+from crypt import methods
+from hashlib import new
 from unicodedata import category, name
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify, session
 from flask_login import login_required, current_user
 from .models import Post, User, Comment, Like
 from . import db
 from .langconfig import switch_language
+from sqlalchemy import desc
 
 views = Blueprint("views", __name__, url_prefix='/')
 languages = switch_language()
@@ -24,6 +27,7 @@ def home():
             session['language'] = language
     language = session.get('language')
     posts = Post.query.all()
+    print(current_user)
     return render_template("home.html", language=language, user=current_user, posts=posts, **languages[language])
 
 # profile
@@ -35,12 +39,54 @@ def profile(username):
             session['language'] = language
     language = session.get('language')
     user = User.query.filter_by(username=username).first()
+    categories = Post.query.filter_by(author=user.id).with_entities(Post.category).distinct().all()
+    newCategories = []
+    if(len(categories) > 0):
+        for item in categories:
+            newItem = str(item).replace('(', '').replace(')', '').replace('\'', '').replace(',', '')
+            newCategories.append(newItem)
     if not user:
         flash('No user with that username exists.', category='error')
         return redirect(url_for("views.home"))
     posts = user.posts
-    return render_template("profile.html", language=language, **languages[language], user=current_user, posts=posts, username=username, user_post=user, category="ALL POSTS")
+    if(len(posts) <= 0):
+        category = "現在投稿はありません"
+    else:
+        category = "All Post"
+    return render_template("profile.html", language=language, **languages[language], user=current_user, posts=posts, username=username, user_post=user, categories=newCategories, category=category)
 
+@views.route("/update-profile/<username>/", methods=['POST', 'GET'])
+@login_required
+def update_profile(username):
+    if 'language' in request.args:
+        language = request.args.get('language')
+        if language is not None:
+            session['language'] = language
+    language = session.get('language')
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        flash('No user with that username exists.')
+        return redirect(url_for("views.home"))
+    elif username == current_user.username:
+        if request.method == 'POST':
+            user.age = request.form.get("age")
+            user.gender = request.form.get("gender")
+            user.work = request.form.get("work")
+            user.country = request.form.get("country")
+            user.avatar = request.form.get("avatar")
+            if len(user.age) > 130:
+                flash('Your age is invalid.', category='error')
+            elif len(user.work) < 2:
+                flash('Your work is invalid.', category='error')
+            else:
+                db.session.merge(user)
+                db.session.commit()
+                flash('User Update!')
+                return redirect(url_for('views.profile', username=username))
+        return render_template("update_profile.html", language=language, **languages[language], user=current_user)
+    elif username != current_user.username:
+        flash('User doesn\'t have edit access.')
+        return redirect(url_for('views.profile'))
 # end profile
 
 
@@ -58,7 +104,7 @@ def show_category(category):
         posts = Post.query.filter_by(category=category).filter(Post.title.like(searchT)).all()
         return render_template("posts.html", language=language, **languages[language], user=current_user, category=category, posts=posts, searchTitle=searchTitle)
     else:
-        posts = Post.query.filter_by(category=category,).all()
+        posts = Post.query.filter_by(category=category,).order_by(desc(Post.date_created)).all()
     return render_template("posts.html", language=language, **languages[language], user=current_user, category=category, posts=posts)
 
 # end category
@@ -73,7 +119,7 @@ def create_post(category):
             session['language'] = language
     language = session.get('language')
     if request.method == "POST":
-        text = request.form.get('text')
+        text = request.form.get('text').replace('\n', '<br>')
         title = request.form.get('title')
         if not text:
             flash('Post cannot be empty', category='error')
@@ -194,7 +240,6 @@ def like(post_id):
     post = Post.query.filter_by(id=post_id).first()
     like = Like.query.filter_by(
         author=current_user.id, post_id=post_id).first()
-    print("hihi")
 
     if not post:
         return jsonify({'error': 'Post does not exist.'}, 400)

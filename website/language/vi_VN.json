@@ -4,7 +4,7 @@
     "title": "Tất Các Chủ Đề",
     "categories": [
       {
-        "title": "SỨc khỏe",
+        "title": "Sức khỏe",
         "img": "healthy"
       },
       {
@@ -25,19 +25,19 @@
       },
       {
         "title": "Tiền Bạc",
-        "img": "house"
+        "img": "money"
       },
       {
         "title": "Cuộc Sống",
-        "img": "house"
+        "img": "life"
       },
       {
         "title": "Con Cái",
-        "img": "house"
+        "img": "child"
       },
       {
         "title": "Học Hành",
-        "img": "house"
+        "img": "study"
       }      
     ]
   },
@@ -58,5 +58,23 @@
   "age" : "Tuổi",
   "sex" : "Giới Tính",  
   "work" : "Công Việc",  
-  "country" : "Quốc Gia"
+  "country" : "Quốc Gia",
+
+  "edit_profile" : "Chỉnh Sửa Profile",  
+  "update_profile" : "Thay Đổi",
+
+  "title" : "Tiêu Đề",  
+  "post_content" : "Đăng Bài",
+  "self_introduction" : "Giới Thiệu Bản Thân",
+
+  "close" : "Đóng",
+  "delete" : "Xóa",
+  "comments" : "Comments",
+  "no_comments" : "No Comments", 
+  "save_changes" : "Lưu thay đổi", 
+
+  "post" : "Đăng Bài",
+  "back" : "Quay Lại",
+
+  "content" : "Bài Viết"
 }

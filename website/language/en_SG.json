@@ -25,19 +25,19 @@
       },
       {
         "title": "Money",
-        "img": "house"
+        "img": "money"
       },
       {
         "title": "Life",
-        "img": "house"
+        "img": "life"
       },
       {
         "title": "Children",
-        "img": "house"
+        "img": "child"
       },
       {
         "title": "Study",
-        "img": "house"
+        "img": "study"
       }      
     ]
   },
@@ -58,5 +58,24 @@
   "age" : "Age",
   "sex" : "Gender",  
   "work" : "Work",  
-  "country" : "Country"
+  "country" : "Country",
+
+  "edit_profile" : "Edit Profile",  
+  "update_profile" : "Update",
+
+  "title" : "Title",  
+  "post_content" : "Post Content",
+  "self_introduction" : "Self Introduction",
+
+  "close" : "Close",
+  "delete" : "Delete",
+  "comments" : "Comments",
+  "no_comments" : "No Comments", 
+  "save_changes" : "Save changes", 
+
+  "post" : "Post",
+  "back" : "Back",
+
+  "content" : "Content"
+
 }

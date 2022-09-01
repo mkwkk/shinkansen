@@ -8,7 +8,7 @@
     {%for i in list_category.categories %}
     <div class="col-4">
       <div class="card" style="margin: 20px 0px;">
-        <img src="{{ url_for('static', filename='images/') }}{{i.img}}.jpeg" class="card-img-top" alt="..." height="300px">
+        <img src="{{ url_for('static', filename='images/') }}{{i.img}}.jpg" class="card-img-top" alt="..." height="300px">
         <div class="card-body">
           <a href="/home/{{i.title}}"  class="card-text text-center" style="font-size: 36px; cursor: pointer;">{{i.title}}</a>
         </div>
