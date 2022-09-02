@@ -78,5 +78,7 @@
 
   "content" : "Bài Viết",
   "placehoder_search": "Tìm kiếm...",
-  "no_post": "Hiện tại không có bài đăng!"
+  "no_post": "Hiện tại không có bài đăng!",
+  "comment_something": "Hãy nhập comment...",
+  "update": "Cập nhật bài dăng"
 }

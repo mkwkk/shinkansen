@@ -78,6 +78,7 @@
 
   "content" : "コンテンツ",
   "placehoder_search": "検索してください...",
-  "no_post": "現在の投稿はありません!"
-
+  "no_post": "現在の投稿はありません!",
+  "comment_something": "コメントを入力...",
+  "update": "アップデート"
 }

@@ -72,12 +72,11 @@
   "comments" : "Comments",
   "no_comments" : "No Comments",
   "save_changes" : "Save changes",
-
   "post" : "Create post",
   "back" : "Back",
-
   "content" : "Content",
   "placehoder_search": "Search...",
-  "no_post": "No posts currently!"
-
+  "no_post": "No posts currently!",
+  "comment_something": "Comment Something...",
+  "update": "Update"
 }

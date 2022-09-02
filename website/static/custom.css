@@ -77,6 +77,20 @@ body{
   font-weight: 600;
   line-height: 2;
 }
+.txt-username{
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #050560;
+  font-style: italic;
+}
+
+.txt-comment{
+  font-size: 20px;
+  text-decoration: none;
+  color: #050560;
+}
 
 @media screen and (max-width: 768px ){
   .text-title{
