@@ -167,7 +167,7 @@ def update_post(category, post_id):
             db.session.commit()
             flash('Post updated', category='success')
         return redirect(url_for("views.show_category", category=category, id=post_id))
-    return render_template('update_post.html', category=category,  post=post, language=language, user=current_user, **languages[language])
+    return render_template('update_post.html', category=category,  post_update=post, language=language, user=current_user, **languages[language])
 
 # end post
 

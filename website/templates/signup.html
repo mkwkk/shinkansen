@@ -1,14 +1,14 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
   content %}
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   <form method="POST">
-  
-    <section class="h-100 bg-dark">
+
+    <section class="h-100">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col">
@@ -22,7 +22,7 @@
                 <div class="col-xl-6">
                   <div class="card-body p-md-5 text-black">
                     <h3 class="mb-5 text-uppercase">{{sign_up}}</h3>
-    
+
                     <div class="row">
                       <div class="col-md-12 mb-8">
                         <div class="form-outline">
@@ -33,11 +33,11 @@
                           name="email"
                           class="form-control"
                           placeholder="Enter Email"
-                        />                        
+                        />
                         </div>
                       </div>
                     </div>
-    
+
                     <div class="row">
                       <div class="col-md-12 mb-8">
                         <div class="form-outline">
@@ -52,7 +52,7 @@
                         </div>
                       </div>
                     </div>
-    
+
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example8">{{password1}}</label>
                       <input
@@ -63,7 +63,7 @@
                         placeholder="Enter Password"
                       />
                     </div>
-  
+
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example8">{{password2}}</label>
                       <input
@@ -73,7 +73,7 @@
                         class="form-control"
                         placeholder="Enter Password Again"
                       />                  </div>
-  
+
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example8">{{age}}</label>
                       <input
@@ -84,7 +84,7 @@
                         placeholder="Enter Your Age"
                       />
                     </div>
-  
+
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example8">{{sex}}</label>
                       <input
@@ -95,8 +95,8 @@
                         placeholder="Male/Female"
                       />
                     </div>
-  
-  
+
+
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example8">{{work}}</label>
                       <input
@@ -107,7 +107,7 @@
                         placeholder="Enter Your Work"
                       />
                     </div>
-  
+
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form3Example8">{{country}}</label>
                       <input
@@ -117,16 +117,12 @@
                         class="form-control"
                         placeholder="Enter Your Country"
                       />
-                      
+
                     </div>
-    
-                    
-            
-    
                     <div class="d-flex justify-content-end pt-3">
-                      <button class="btn btn-primary" type="submit">{{sign_up}}</button>
+                      <button class="btn btn-bg text-white" type="submit">{{sign_up}}</button>
                     </div>
-    
+
                   </div>
                 </div>
               </div>
@@ -135,11 +131,10 @@
         </div>
       </div>
     </section>
-  
-  
-  
-  
-  
-    
+
+
+
+
+
+
   {% endblock %}
-  

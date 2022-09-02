@@ -48,6 +48,7 @@ body{
   text-align: center;
   text-decoration: none;
   color: #050560;
+  margin-top: 40px;
 }
 .text-category:hover{
   color: white !important;
@@ -72,5 +73,14 @@ body{
   background-color: #050560;
 }
 .txt-label{
-  
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+}
+
+@media screen and (max-width: 768px ){
+  .text-title{
+    font-size: 30px;
+    width: 70%;
+  }
 }
