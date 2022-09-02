@@ -5,10 +5,10 @@
 </div>
 <div>
 {% block search %}
-<div class="search-container">
-  <form method="post">
-    <input type="text" placeholder="Search.." name="searchTitle" class="form-control" value="{{searchTitle}}">
-    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+<div class="search-container mt-5">
+  <form method="post" style="display: inline-flex">
+    <input type="text" placeholder="Search.." name="searchTitle" class="form-control rounded-0" value="{{searchTitle}}">
+    <button type="submit" class="btn btn-primary btn-search rounded-0"><i class="fa fa-search"></i></button>
   </form>
 </div>
 {% endblock %}
@@ -16,7 +16,15 @@
 {% block content %}
 <!-- {% block profile %}
 {% endblock %} -->
-<h1 class="text-center">{% block header %}{{category}}{% endblock %}</h1>
+<h1 class="text-center text-sub-ategory mt-5">{% block header %}{{category}}{% endblock %}</h1>
+{% if posts|length > 0 %}
+<div class="justify-content-end">
+  <a href="/home/{{category}}/create-post">
+    <button type="button" class="btn btn-lg text-center btn-bg text-white">
+      <i class="fas fa-plus"></i> {{post}}
+    </button>
+  </a>
+</div>
 <div id="posts">
   {% for post in posts %}
   <div class="card border-dark">
@@ -122,11 +130,16 @@
   </div>
   <br /> {% endfor %}
 </div>
-{% block footer %}
-<div>
-  <a href="/home/{{category}}/create-post"><button type="button" class="btn btn-primary btn-lg text-center">
-      {{post}}
-    </button></a>
-</div>
-{% endblock %}
+{% else %}
+  <div class="text-center text-no-post">{{no_post}}</div>
+  {% block footer %}
+    <div class="text-center m-5">
+      <a href="/home/{{category}}/create-post">
+        <button type="button" class="btn btn-primary btn-lg text-center">
+          <i class="fas fa-plus"></i> {{post}}
+        </button>
+      </a>
+    </div>
+  {% endblock %}
+{% endif %}
 {% endblock %}

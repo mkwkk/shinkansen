@@ -14,6 +14,13 @@ function like(postId) {
     .catch((e) => alert("Could not like post."));
 }
 
+function activeTab(){
+  $(".navbar-nav").on("click", function(){
+    $(".nav-item a").find(".active").removeClass("active");
+    $(this).parent().addClass("active");
+  });
+}
+
 $(document).ready(function() {
   var readURL = function(input) {
     if (input.files && input.files[0]) {

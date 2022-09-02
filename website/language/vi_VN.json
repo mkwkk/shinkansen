@@ -38,14 +38,14 @@
       {
         "title": "Học Hành",
         "img": "study"
-      }      
+      }
     ]
   },
   "submit" : "Đăng Bài",
   "login" : "Đăng Nhập",
   "sign_up" : "Đăng Ký",
-  "japanese" : "Tiếng Nhật",  
-  "english" : "Tiếng Anh",  
+  "japanese" : "Tiếng Nhật",
+  "english" : "Tiếng Anh",
   "vietnamese" : "Tiếng Việt",
 
   "profile" : "Trang Cá Nhân",
@@ -53,28 +53,30 @@
 
   "mail_address" : "Địa Chỉ Email",
   "user_name" : "Tên Đăng Nhập",
-  "password1" : "Nhập Password",  
-  "password2" : "NHập Lại Password",  
+  "password1" : "Nhập Password",
+  "password2" : "NHập Lại Password",
   "age" : "Tuổi",
-  "sex" : "Giới Tính",  
-  "work" : "Công Việc",  
+  "sex" : "Giới Tính",
+  "work" : "Công Việc",
   "country" : "Quốc Gia",
 
-  "edit_profile" : "Chỉnh Sửa Profile",  
+  "edit_profile" : "Chỉnh Sửa Profile",
   "update_profile" : "Thay Đổi",
 
-  "title" : "Tiêu Đề",  
+  "title" : "Tiêu Đề",
   "post_content" : "Đăng Bài",
   "self_introduction" : "Giới Thiệu Bản Thân",
 
   "close" : "Đóng",
   "delete" : "Xóa",
   "comments" : "Comments",
-  "no_comments" : "No Comments", 
-  "save_changes" : "Lưu thay đổi", 
+  "no_comments" : "No Comments",
+  "save_changes" : "Lưu thay đổi",
 
-  "post" : "Đăng Bài",
+  "post" : "Thêm bài viết",
   "back" : "Quay Lại",
 
-  "content" : "Bài Viết"
+  "content" : "Bài Viết",
+  "placehoder_search": "Tìm kiếm...",
+  "no_post": "Hiện tại không có bài đăng!"
 }
