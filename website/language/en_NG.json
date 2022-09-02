@@ -1,7 +1,7 @@
 {
   "homepage": "Home",
   "list_category": {
-    "title": "All categories",
+    "title": "All Categories",
     "categories": [
       {
         "title": "Healthy",
@@ -38,14 +38,14 @@
       {
         "title": "Study",
         "img": "study"
-      }      
+      }
     ]
   },
   "submit" : "Post Category",
   "login" : "Login",
   "sign_up" : "Sign Up",
-  "japanese" : "Japanese",  
-  "english" : "English",  
+  "japanese" : "Japanese",
+  "english" : "English",
   "vietnamese" : "Vietnamese",
 
   "profile" : "Profile",
@@ -53,29 +53,31 @@
 
   "mail_address" : "Mail Address",
   "user_name" : "User name",
-  "password1" : "Enter Password",  
-  "password2" : "Re-enter Password",  
+  "password1" : "Enter Password",
+  "password2" : "Re-enter Password",
   "age" : "Age",
-  "sex" : "Gender",  
-  "work" : "Work",  
+  "sex" : "Gender",
+  "work" : "Work",
   "country" : "Country",
 
-  "edit_profile" : "Edit Profile",  
+  "edit_profile" : "Edit Profile",
   "update_profile" : "Update",
 
-  "title" : "Title",  
+  "title" : "Title",
   "post_content" : "Post Content",
-  "self_introduction" : "Self Introduction",
+  "self_introduction" : "My Profile",
 
   "close" : "Close",
   "delete" : "Delete",
   "comments" : "Comments",
-  "no_comments" : "No Comments", 
-  "save_changes" : "Save changes", 
+  "no_comments" : "No Comments",
+  "save_changes" : "Save changes",
 
-  "post" : "Post",
+  "post" : "Create post",
   "back" : "Back",
 
-  "content" : "Content"
+  "content" : "Content",
+  "placehoder_search": "Search...",
+  "no_post": "No posts currently!"
 
 }

@@ -75,7 +75,6 @@ def sign_up():
             return render_template("home.html", user=current_user, **languages[language])
     return render_template("signup.html", user=current_user, **languages[language])
 
-
 @auth.route("/logout/")
 @login_required
 def logout():

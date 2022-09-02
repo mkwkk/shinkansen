@@ -1,0 +1,76 @@
+body{
+  font-family: ui-serif;
+}
+.text-header{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 2;
+}
+.text-logo{
+  font-size: 24px;
+  color: white;
+  font-style: italic;
+  font-weight: 700;
+  padding: 10px 5px;
+}
+.btn-landing{
+  background-color: white;
+  color: #050560 !important;
+  margin: 0px 10px;
+  width: 130px;
+  text-align: center;
+  border-radius: 20px;
+}
+.btn-landing:hover{
+  background-color: #151571;
+  color: white !important;
+}
+.active{
+  color: white;
+}
+.text-title{
+  font-size: 54px;
+  font-weight: 1000;
+  font-family: ui-serif;
+  line-height: 2;
+  padding: 5px 5px;
+  color: #050560;
+  border-bottom: 3px solid #151571;
+  width: 50%;
+  margin: 0 auto;
+}
+.text-category{
+  text-align: center;
+  text-decoration: none;
+  color: #050560;
+}
+.text-sub-ategory{
+  text-align: center;
+  text-decoration: none;
+  color: #050560;
+}
+.text-category:hover{
+  color: white !important;
+}
+.list-category .card-body:hover{
+  background-color: #050560;
+}
+.list-category .card-body:hover .text-category{
+  color: white !important;
+}
+.btn-search{
+  background-color: #050560;
+}
+.text-no-post{
+  font-size: 28px;
+  margin: 42px;
+}
+#posts{
+  margin: 50px 0px;
+}
+.btn-bg{
+  background-color: #050560;
+}
+.txt-label{
+  
+}

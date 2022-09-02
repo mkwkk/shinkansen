@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h1 align="center">{{category}}</h1>
+<h1 align="center" class="text-sub-ategory">{{category}}</h1>
 
 <form method="POST">
+ <div class="mt-3">
   <label for="text-title" class="form-label">{{title}}</label>
   <input type="text" class="form-control" id="text-title" placeholder="title" name="title">
-  <label>{{content}}</label>
-  <textarea name="text" id="text" class="form-control"></textarea>
+ </div>
+ <div class="mt-3">
+  <label class="">{{content}}</label>
+  <textarea name="text" id="text" class="form-control" rows="6" cols="100"></textarea>
+ </div>
   <br />
   <div align="center">
     <button type="submit" class="btn btn-lg btn-primary">{{post}}</button>
@@ -15,7 +19,7 @@
 </form>
 <br />
 <div align="center">
-  <a href="/home"
+  <a href="/home/{{category}}"
     ><button type="button" class="btn btn-lg btn-secondary">{{back}}</button></a
   >
 </div>

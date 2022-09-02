@@ -10,6 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css')}}">
     <script
       src="https://kit.fontawesome.com/999ca2bb93.js"
       crossorigin="anonymous"
@@ -18,7 +19,7 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #050560;">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -28,19 +29,27 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/home">{{homepage}}</a>
+        <div class="collapse navbar-collapse row" id="navbar">
+          <div class="col-4">
+            <a class="nav-item" href="/home">
+              <img width="60px" height="55px" src="/static/images/logo.png">
+            </a>
+            <a class="nav-item nav-link text-header text-logo d-inline" href="/home">
+              Worries Sharing
+            </a>
+          </div>
+          <div class="navbar-nav col-8 justify-content-end">
+            <a class="nav-item nav-link text-header active" href="/home">{{homepage}}</a>
+            <a class="nav-item nav-link text-header" href="{{ url_for('views.home', language='en_NG') }}" >{{english}}</a>
+            <a class="nav-item nav-link text-header" href="{{ url_for('views.home', language='ja_JP') }}">{{japanese}}</a>
+            <a class="nav-item nav-link text-header" href="{{ url_for('views.home', language='vi_VN') }}">{{vietnamese}}</a>
             {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="/profile/{{user.username}}">{{profile}}</a>
-            <a class="nav-item nav-link" href="/logout">{{log_out}}</a>
+            <a class="nav-item nav-link text-header" href="/profile/{{user.username}}">{{profile}}</a>
+            <a class="nav-item nav-link text-header" href="/logout">{{log_out}}</a>
             {% else %}
-            <a class="nav-item nav-link" href="/login">{{login}}</a>
-            <a class="nav-item nav-link" href="/sign-up">{{sign_up}}</a>
+            <a class="nav-item nav-link text-header btn-landing" href="/login">{{login}}</a>
+            <a class="nav-item nav-link text-header btn-landing" href="/sign-up">{{sign_up}}</a>
             {% endif %}
-            <a class="nav-item nav-link" href="{{ url_for('views.home', language='ja_JP') }}">{{japanese}}</a>
-            <a class="nav-item nav-link" href="{{ url_for('views.home', language='en_NG') }}">{{english}}</a>
-            <a class="nav-item nav-link" href="{{ url_for('views.home', language='vi_VN') }}">{{vietnamese}}</a>
           </div>
         </div>
       </div>
@@ -69,6 +78,9 @@
         {% block content %}
         {% endblock %}
       </div>
+    </div>
+    <div class="m-5">
+      <p class="text-center">@Copyright by shikanzen</p>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
